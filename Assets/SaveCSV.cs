@@ -74,10 +74,22 @@ public class SaveCSV : MonoBehaviour
             {
                 case StageObject.ENUM_ObjTypes.固定:
                     break;
+                case StageObject.ENUM_ObjTypes.敵:
+                    break;
                 case StageObject.ENUM_ObjTypes.ベルトコンベア:
                     objParamsList.Add(objTrans.GetComponent<StageObject>().ConveyerSpeed.ToString());
                     break;
                 case StageObject.ENUM_ObjTypes.スイッチとドア:
+                    objParamsList.Add(objTrans.GetComponent<StageObject>().ConnectNum.ToString());
+                    objParamsList.Add(objTrans.GetComponent<StageObject>().Return.ToString());
+                    break;
+                case StageObject.ENUM_ObjTypes.扇風機:
+                    objParamsList.Add(objTrans.GetComponent<StageObject>().ConnectNum.ToString());
+                    objParamsList.Add(objTrans.GetComponent<StageObject>().FanPower.ToString());
+                    objParamsList.Add(objTrans.GetComponent<StageObject>().WindDistance.ToString());
+                    break;
+                case StageObject.ENUM_ObjTypes.露出配線:
+                    objParamsList.Add(objTrans.GetComponent<StageObject>().ConnectNum.ToString());
                     break;
             }
 
