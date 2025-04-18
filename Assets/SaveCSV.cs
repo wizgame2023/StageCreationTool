@@ -1,7 +1,8 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -11,11 +12,11 @@ public class SaveCSV : MonoBehaviour
 
     void Start()
     {
-        // Œ»İ‚Ìscene‚Ì–¼‘O‚ÅCSVƒtƒ@ƒCƒ‹‚ğì¬‚·‚é
+        // ç¾åœ¨ã®sceneã®åå‰ã§CSVãƒ•ã‚¡ã‚¤ãƒ«ã‚’ä½œæˆã™ã‚‹
         string senceName = SceneManager.GetActiveScene().name;
         stageObjectDeta = new StreamWriter(@senceName + @".csv", false, Encoding.GetEncoding("Shift_JIS"));
     }
-
+    
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Return))
@@ -24,55 +25,89 @@ public class SaveCSV : MonoBehaviour
         }
     }
     
-    private void SaveStageDeta()
+    [ContextMenu("SaveStageDeta")]
+    public void SaveStageDeta()
     {
+        // ç¾åœ¨ã®sceneã®åå‰ã§CSVãƒ•ã‚¡ã‚¤ãƒ«ã‚’ä½œæˆã™ã‚‹
+        string senceName = SceneManager.GetActiveScene().name;
+        stageObjectDeta = new StreamWriter(@senceName + @".csv", false, Encoding.GetEncoding("Shift_JIS"));
+
         Transform childTrans = gameObject.GetComponentInChildren<Transform>();
 
-        // qƒIƒuƒWƒFƒNƒg‚ª‚P‚Â‚à‚È‚¢‚È‚çI—¹
+        // å­ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆãŒï¼‘ã¤ã‚‚ãªã„ãªã‚‰çµ‚äº†
         if (childTrans.childCount == 0)
         {
             return;
         }
 
-        // qƒIƒuƒWƒFƒNƒg‚ğ‘S‚Ä‚İ‚é
+        // å­ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’å…¨ã¦ã¿ã‚‹
         foreach (Transform objTrans in childTrans)
         {
-            // ƒIƒuƒWƒFƒNƒg‚Ì”Ô†‚ÆTransform‚Ìƒpƒ‰ƒ[ƒ^‚ğæ“¾‚·‚é
-            int objNum = objTrans.GetComponent<StageObject>().GetObjcectNumber();
+            // ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®ç•ªå·ã¨Transformã®ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ã‚’å–å¾—ã™ã‚‹
+            int objType = (int)objTrans.GetComponent<StageObject>().objectType;
+            int objNum = objTrans.GetComponent<StageObject>().objectNumber;
             Vector3 objScale = objTrans.localScale;
             Quaternion objQuaternion = objTrans.rotation;
             Vector3 objPosition = objTrans.position;
 
-            // ƒpƒ‰ƒ[ƒ^‚ğˆês‚É‘‚«‚Ş
-            string[] objParamsOneLine = {
-                // ”Ô†
-                objNum.ToString(),
-                // ƒTƒCƒY
-                objScale.x.ToString(),
-                objScale.y.ToString(),
-                objScale.z.ToString(),
-                // ‰ñ“]
-                objQuaternion.x.ToString(),
-                objQuaternion.y.ToString(),
-                objQuaternion.z.ToString(),
-                objQuaternion.w.ToString(),
-                // ˆÊ’u
-                objPosition.x.ToString(), 
-                objPosition.y.ToString(), 
-                objPosition.z.ToString() 
-            };
+            // ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ã‚’ä¸€è¡Œã«æ›¸ãè¾¼ã‚€
+            List<string> objParamsList = new List<string>();
+            // ç¨®é¡
+            objParamsList.Add(objType.ToString());
+            // ç•ªå·
+            objParamsList.Add(objNum.ToString());
+            // ã‚µã‚¤ã‚º
+            objParamsList.Add(objScale.x.ToString());
+            objParamsList.Add(objScale.y.ToString());
+            objParamsList.Add(objScale.z.ToString());
+            // å›è»¢
+            objParamsList.Add(objQuaternion.x.ToString());
+            objParamsList.Add(objQuaternion.y.ToString());
+            objParamsList.Add(objQuaternion.z.ToString());
+            objParamsList.Add(objQuaternion.w.ToString());
+            // ä½ç½®
+            objParamsList.Add(objPosition.x.ToString());
+            objParamsList.Add(objPosition.y.ToString());
+            objParamsList.Add(objPosition.z.ToString());
+            
+            switch((StageObject.ENUM_ObjTypes)objType)
+            {
+                case StageObject.ENUM_ObjTypes.å›ºå®š:
+                    break;
+                case StageObject.ENUM_ObjTypes.ãƒ™ãƒ«ãƒˆã‚³ãƒ³ãƒ™ã‚¢:
+                    objParamsList.Add(objTrans.GetComponent<StageObject>().ConveyerSpeed.ToString());
+                    break;
+                case StageObject.ENUM_ObjTypes.ã‚¹ã‚¤ãƒƒãƒã¨ãƒ‰ã‚¢:
+                    break;
+            }
 
-            // objParamsOneLine‚Ì‘S‚Ä‚Ì—v‘f‚ğu,v‚Å˜AŒ‹
-            string objParams = string.Join(",", objParamsOneLine);
+            // objParamsOneLineã®å…¨ã¦ã®è¦ç´ ã‚’ã€Œ,ã€ã§é€£çµ
+            string objParams = string.Join(",", objParamsList);
 
-            // objParams‚ğcsvƒtƒ@ƒCƒ‹‚É‘‚«‚Ş
+            // objParamsã‚’csvãƒ•ã‚¡ã‚¤ãƒ«ã«æ›¸ãè¾¼ã‚€
             stageObjectDeta.WriteLine(objParams);
         }
 
-        Debug.Log("ƒvƒƒWƒFƒNƒg’¼‰º‚Éƒtƒ@ƒCƒ‹‚ğ¶¬‚µ‚Ü‚·");
-        Debug.Log("ƒXƒe[ƒWƒIƒuƒWƒFƒNƒgƒf[ƒ^‚ğ•Û‘¶‚µ‚Ü‚µ‚½");
+        Debug.Log("ãƒ—ãƒ­ã‚¸ã‚§ã‚¯ãƒˆç›´ä¸‹ã«ãƒ•ã‚¡ã‚¤ãƒ«ã‚’ç”Ÿæˆã—ã¾ã™");
+        Debug.Log("ã‚¹ãƒ†ãƒ¼ã‚¸ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆãƒ‡ãƒ¼ã‚¿ã‚’ä¿å­˜ã—ã¾ã—ãŸ");
 
-        // ƒtƒ@ƒCƒ‹‚ğ•Â‚¶‚é
+        // ãƒ•ã‚¡ã‚¤ãƒ«ã‚’é–‰ã˜ã‚‹
         stageObjectDeta.Close();
+    }
+}
+
+[CustomEditor(typeof(SaveCSV))]
+public class StageSave : Editor
+{
+    public override void OnInspectorGUI()
+    {
+        DrawDefaultInspector();
+
+        SaveCSV saveCSV = target as SaveCSV;
+
+        if (GUILayout.Button("ã‚¹ãƒ†ãƒ¼ã‚¸ã‚’ä¿å­˜"))
+        {
+            saveCSV.SaveStageDeta();
+        }
     }
 }

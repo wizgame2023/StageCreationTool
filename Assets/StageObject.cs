@@ -1,13 +1,23 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class StageObject : MonoBehaviour
 {
-    [SerializeField] private int objectNumber;
-    
-    public int GetObjcectNumber()
+    public enum ENUM_ObjTypes
     {
-        return objectNumber;
-    }   
+        固定,
+        ベルトコンベア,
+        スイッチとドア
+    }
+
+    // オブジェクトの番号
+    public int objectNumber;
+
+    // オブジェクトのタイプ
+    public ENUM_ObjTypes objectType;
+
+    //-ベルトコンベアのパラメータ------------------------------
+    public float ConveyerSpeed;
+    //---------------------------------------------------------
 }
