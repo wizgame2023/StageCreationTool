@@ -78,6 +78,7 @@ public class SaveCSV : MonoBehaviour
                     break;
                 case StageObject.ENUM_ObjTypes.ベルトコンベア:
                     objParamsList.Add(objTrans.GetComponent<StageObject>().ConveyerSpeed.ToString());
+                    objParamsList.Add(objTrans.GetComponent<StageObject>().ConnectNum.ToString());
                     break;
                 case StageObject.ENUM_ObjTypes.スイッチとドア:
                     objParamsList.Add(objTrans.GetComponent<StageObject>().ConnectNum.ToString());

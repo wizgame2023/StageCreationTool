@@ -42,6 +42,9 @@ public class ObjParamGUIEditor : Editor
                 // ベルトコンベアのスピード
                 property[nameof(StageObject.ConveyerSpeed)].floatValue = 
                     EditorGUILayout.FloatField("ベルトコンベアのスピード", property[nameof(StageObject.ConveyerSpeed)].floatValue);
+                // 接続番号
+                property[nameof(StageObject.ConnectNum)].intValue =
+                    EditorGUILayout.IntField("接続番号", property[nameof(StageObject.ConnectNum)].intValue);
                 break;
             case StageObject.ENUM_ObjTypes.スイッチとドア:
                 // 接続番号
