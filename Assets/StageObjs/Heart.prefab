@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &8127823161884416107
+--- !u!1001 &3277857843188379788
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -13,15 +13,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2157167876972366777, guid: f006262cb6c385f4f8927e816c853e63, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 293.7462
+      value: 325.4761
       objectReference: {fileID: 0}
     - target: {fileID: 2157167876972366777, guid: f006262cb6c385f4f8927e816c853e63, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -6.09
+      value: -6.2
       objectReference: {fileID: 0}
     - target: {fileID: 2157167876972366777, guid: f006262cb6c385f4f8927e816c853e63, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 11.444889
+      value: 32.451168
       objectReference: {fileID: 0}
     - target: {fileID: 2157167876972366777, guid: f006262cb6c385f4f8927e816c853e63, type: 3}
       propertyPath: m_LocalRotation.w
@@ -53,11 +53,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4208633727068849256, guid: f006262cb6c385f4f8927e816c853e63, type: 3}
       propertyPath: m_Name
-      value: drill
+      value: Heart
+      objectReference: {fileID: 0}
+    - target: {fileID: 5153766688345738071, guid: f006262cb6c385f4f8927e816c853e63, type: 3}
+      propertyPath: objectType
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5153766688345738071, guid: f006262cb6c385f4f8927e816c853e63, type: 3}
       propertyPath: objectNumber
-      value: 3
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f006262cb6c385f4f8927e816c853e63, type: 3}

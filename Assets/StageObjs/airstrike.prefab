@@ -56,8 +56,12 @@ PrefabInstance:
       value: airstrike
       objectReference: {fileID: 0}
     - target: {fileID: 5153766688345738071, guid: f006262cb6c385f4f8927e816c853e63, type: 3}
+      propertyPath: objectType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5153766688345738071, guid: f006262cb6c385f4f8927e816c853e63, type: 3}
       propertyPath: objectNumber
-      value: 4
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f006262cb6c385f4f8927e816c853e63, type: 3}

@@ -110,6 +110,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c997ba87ea7970a419ac70d096281684, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectNumber: 0
-  objectType: 2
+  objectNumber: 2
+  objectType: 3
   ConveyerSpeed: 0
+  ConnectNum: 0
+  Return: 0
+  FanPower: 0
+  WindDistance: 0
