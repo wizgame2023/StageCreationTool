@@ -113,3 +113,7 @@ MonoBehaviour:
   objectNumber: 0
   objectType: 0
   ConveyerSpeed: 0
+  ConnectNum: 0
+  Return: 0
+  FanPower: 0
+  WindDistance: 0
