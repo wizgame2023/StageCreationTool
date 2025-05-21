@@ -73,6 +73,7 @@ public class SaveCSV : MonoBehaviour
             switch((StageObject.ENUM_ObjTypes)objType)
             {
                 case StageObject.ENUM_ObjTypes.固定:
+                    objParamsList.Add(objTrans.GetComponent<StageObject>().GroundNum.ToString());
                     break;
                 case StageObject.ENUM_ObjTypes.敵:
                     break;

@@ -47,6 +47,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectNumber: 0
   objectType: 0
+  GroundNum: 1
   ConveyerSpeed: 0
   ConnectNum: 0
   Return: 0
