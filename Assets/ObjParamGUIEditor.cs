@@ -15,6 +15,7 @@ public class ObjParamGUIEditor : Editor
     {
         property.Add(nameof(StageObject.objectNumber), serializedObject.FindProperty(nameof(StageObject.objectNumber)));
         property.Add(nameof(StageObject.objectType), serializedObject.FindProperty(nameof(StageObject.objectType)));
+        property.Add(nameof(StageObject.GroundNum), serializedObject.FindProperty(nameof(StageObject.GroundNum)));
         property.Add(nameof(StageObject.ConveyerSpeed), serializedObject.FindProperty(nameof(StageObject.ConveyerSpeed)));
         property.Add(nameof(StageObject.ConnectNum), serializedObject.FindProperty(nameof(StageObject.ConnectNum)));
         property.Add(nameof(StageObject.Return), serializedObject.FindProperty(nameof(StageObject.Return)));
@@ -35,6 +36,9 @@ public class ObjParamGUIEditor : Editor
         switch ((StageObject.ENUM_ObjTypes)property[nameof(StageObject.objectType)].enumValueIndex)
         {
             case StageObject.ENUM_ObjTypes.固定:
+                // 接続番号
+                property[nameof(StageObject.GroundNum)].intValue =
+                    EditorGUILayout.IntField("床のモデル（0通常 1縁石） ※床のみ", property[nameof(StageObject.GroundNum)].intValue);
                 break;
             case StageObject.ENUM_ObjTypes.敵:
                 break;

@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8155424118367537223}
+  - component: {fileID: 8245537787137483451}
   m_Layer: 0
   m_Name: "\u58C1\uFF08\u53F3\u67F1\uFF09"
   m_TagString: Untagged
@@ -32,6 +33,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8245537787137483451
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1503122328892245887}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c997ba87ea7970a419ac70d096281684, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectNumber: 1
+  objectType: 0
+  GroundNum: 0
+  ConveyerSpeed: 0
+  ConnectNum: 0
+  Return: 0
+  FanPower: 0
+  WindDistance: 0
 --- !u!1001 &194787273437232593
 PrefabInstance:
   m_ObjectHideFlags: 0
