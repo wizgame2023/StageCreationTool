@@ -21,7 +21,7 @@ public class ObjParamGUIEditor : Editor
         property.Add(nameof(StageObject.Return), serializedObject.FindProperty(nameof(StageObject.Return)));
         property.Add(nameof(StageObject.FanPower), serializedObject.FindProperty(nameof(StageObject.FanPower)));
         property.Add(nameof(StageObject.WindDistance), serializedObject.FindProperty(nameof(StageObject.WindDistance)));
-        property.Add(nameof(StageObject.IsCollapse), serializedObject.FindProperty(nameof(StageObject.WindDistance)));
+        property.Add(nameof(StageObject.IsCollapse), serializedObject.FindProperty(nameof(StageObject.IsCollapse)));
     }
 
     public override void OnInspectorGUI()
@@ -74,7 +74,6 @@ public class ObjParamGUIEditor : Editor
                     EditorGUILayout.IntField("接続番号", property[nameof(StageObject.ConnectNum)].intValue);
                 break;
             case StageObject.ENUM_ObjTypes.分割壁:
-                // 接続番号
                 property[nameof(StageObject.IsCollapse)].boolValue =
                     EditorGUILayout.Toggle("破壊可能", property[nameof(StageObject.IsCollapse)].boolValue);
                 break;
