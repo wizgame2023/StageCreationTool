@@ -11,7 +11,8 @@ public class StageObject : MonoBehaviour
         ベルトコンベア,
         スイッチとドア,
         扇風機,
-        露出配線
+        露出配線,
+        分割壁
     }
 
     // オブジェクトの番号
@@ -21,7 +22,7 @@ public class StageObject : MonoBehaviour
     public ENUM_ObjTypes objectType;
 
     //-固定のパラメータ----------------------------------------
-    public int GroundNum;
+    public int VersionDeff;
     //---------------------------------------------------------
 
     //-ベルトコンベアのパラメータ------------------------------
@@ -41,5 +42,9 @@ public class StageObject : MonoBehaviour
     //-扇風機のパラメータ--------------------------------------
     public float FanPower;
     public float WindDistance;
+    //---------------------------------------------------------
+
+    //-扇風機のパラメータ--------------------------------------
+    public bool IsCollapse;
     //---------------------------------------------------------
 }
