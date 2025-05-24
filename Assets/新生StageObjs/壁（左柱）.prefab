@@ -45,14 +45,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c997ba87ea7970a419ac70d096281684, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectNumber: 1
-  objectType: 0
-  GroundNum: 0
+  objectNumber: 0
+  objectType: 1
+  VersionDeff: 0
+  InvisibleNum: -1
   ConveyerSpeed: 0
   ConnectNum: 0
   Return: 0
   FanPower: 0
   WindDistance: 0
+  IsCollapse: 0
+  MovieIvent: 0
 --- !u!1001 &6522819132952598062
 PrefabInstance:
   m_ObjectHideFlags: 0

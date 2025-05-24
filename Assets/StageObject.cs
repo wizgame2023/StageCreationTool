@@ -7,11 +7,21 @@ public class StageObject : MonoBehaviour
     public enum ENUM_ObjTypes
     {
         固定,
+        壁,
         敵,
         ベルトコンベア,
         スイッチとドア,
         扇風機,
-        露出配線
+        露出配線,
+        分割壁,
+        ムービーイベント判定
+    }
+
+    public enum ENUM_MovieIvent
+    {
+        クリアムービー = 1,
+        ドリルムービー = 3,
+        ラスボスムービー = 4,
     }
 
     // オブジェクトの番号
@@ -21,7 +31,11 @@ public class StageObject : MonoBehaviour
     public ENUM_ObjTypes objectType;
 
     //-固定のパラメータ----------------------------------------
-    public int GroundNum;
+    public int VersionDeff;
+    //---------------------------------------------------------
+
+    //-壁のパラメータ------------------------------------------
+    public int InvisibleNum;
     //---------------------------------------------------------
 
     //-ベルトコンベアのパラメータ------------------------------
@@ -41,5 +55,12 @@ public class StageObject : MonoBehaviour
     //-扇風機のパラメータ--------------------------------------
     public float FanPower;
     public float WindDistance;
+    //---------------------------------------------------------
+
+    //-分割壁のパラメータ--------------------------------------
+    public bool IsCollapse;
+    //---------------------------------------------------------
+    //-ムービーイベント判定のパラメータ------------------------
+    public ENUM_MovieIvent MovieIvent;
     //---------------------------------------------------------
 }

@@ -15,12 +15,15 @@ public class ObjParamGUIEditor : Editor
     {
         property.Add(nameof(StageObject.objectNumber), serializedObject.FindProperty(nameof(StageObject.objectNumber)));
         property.Add(nameof(StageObject.objectType), serializedObject.FindProperty(nameof(StageObject.objectType)));
-        property.Add(nameof(StageObject.GroundNum), serializedObject.FindProperty(nameof(StageObject.GroundNum)));
+        property.Add(nameof(StageObject.VersionDeff), serializedObject.FindProperty(nameof(StageObject.VersionDeff)));
+        property.Add(nameof(StageObject.InvisibleNum), serializedObject.FindProperty(nameof(StageObject.InvisibleNum)));
         property.Add(nameof(StageObject.ConveyerSpeed), serializedObject.FindProperty(nameof(StageObject.ConveyerSpeed)));
         property.Add(nameof(StageObject.ConnectNum), serializedObject.FindProperty(nameof(StageObject.ConnectNum)));
         property.Add(nameof(StageObject.Return), serializedObject.FindProperty(nameof(StageObject.Return)));
         property.Add(nameof(StageObject.FanPower), serializedObject.FindProperty(nameof(StageObject.FanPower)));
         property.Add(nameof(StageObject.WindDistance), serializedObject.FindProperty(nameof(StageObject.WindDistance)));
+        property.Add(nameof(StageObject.IsCollapse), serializedObject.FindProperty(nameof(StageObject.IsCollapse)));
+        property.Add(nameof(StageObject.MovieIvent), serializedObject.FindProperty(nameof(StageObject.MovieIvent)));
     }
 
     public override void OnInspectorGUI()
@@ -37,8 +40,13 @@ public class ObjParamGUIEditor : Editor
         {
             case StageObject.ENUM_ObjTypes.固定:
                 // 接続番号
-                property[nameof(StageObject.GroundNum)].intValue =
-                    EditorGUILayout.IntField("床のモデル（0通常 1縁石） ※床のみ", property[nameof(StageObject.GroundNum)].intValue);
+                property[nameof(StageObject.VersionDeff)].intValue =
+                    EditorGUILayout.IntField("モデル違い", property[nameof(StageObject.VersionDeff)].intValue);
+                break;
+            case StageObject.ENUM_ObjTypes.壁:
+                // 接続番号
+                property[nameof(StageObject.InvisibleNum)].intValue =
+                    EditorGUILayout.IntField("透過番号", property[nameof(StageObject.InvisibleNum)].intValue);
                 break;
             case StageObject.ENUM_ObjTypes.敵:
                 break;
@@ -71,6 +79,14 @@ public class ObjParamGUIEditor : Editor
                 // 接続番号
                 property[nameof(StageObject.ConnectNum)].intValue =
                     EditorGUILayout.IntField("接続番号", property[nameof(StageObject.ConnectNum)].intValue);
+                break;
+            case StageObject.ENUM_ObjTypes.分割壁:
+                property[nameof(StageObject.IsCollapse)].boolValue =
+                    EditorGUILayout.Toggle("破壊可能", property[nameof(StageObject.IsCollapse)].boolValue);
+                break;
+            case StageObject.ENUM_ObjTypes.ムービーイベント判定:
+                property[nameof(StageObject.MovieIvent)].enumValueIndex =
+                    EditorGUILayout.Popup("ムービーイベントの種類", property[nameof(StageObject.MovieIvent)].enumValueIndex, property[nameof(StageObject.MovieIvent)].enumNames);
                 break;
         }
 

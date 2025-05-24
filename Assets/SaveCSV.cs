@@ -73,7 +73,10 @@ public class SaveCSV : MonoBehaviour
             switch((StageObject.ENUM_ObjTypes)objType)
             {
                 case StageObject.ENUM_ObjTypes.固定:
-                    objParamsList.Add(objTrans.GetComponent<StageObject>().GroundNum.ToString());
+                    objParamsList.Add(objTrans.GetComponent<StageObject>().VersionDeff.ToString());
+                    break;
+                case StageObject.ENUM_ObjTypes.壁:
+                    objParamsList.Add(objTrans.GetComponent<StageObject>().InvisibleNum.ToString());
                     break;
                 case StageObject.ENUM_ObjTypes.敵:
                     break;
@@ -92,6 +95,13 @@ public class SaveCSV : MonoBehaviour
                     break;
                 case StageObject.ENUM_ObjTypes.露出配線:
                     objParamsList.Add(objTrans.GetComponent<StageObject>().ConnectNum.ToString());
+                    break;
+                case StageObject.ENUM_ObjTypes.分割壁:
+                    objParamsList.Add(objTrans.GetComponent<StageObject>().IsCollapse.ToString());
+                    break;
+                case StageObject.ENUM_ObjTypes.ムービーイベント判定:
+                    int movieIvent = (int)objTrans.GetComponent<StageObject>().MovieIvent;
+                    objParamsList.Add(movieIvent.ToString());
                     break;
             }
 
