@@ -96,6 +96,10 @@ public class SaveCSV : MonoBehaviour
                 case StageObject.ENUM_ObjTypes.分割壁:
                     objParamsList.Add(objTrans.GetComponent<StageObject>().IsCollapse.ToString());
                     break;
+                case StageObject.ENUM_ObjTypes.ムービーイベント判定:
+                    int movieIvent = (int)objTrans.GetComponent<StageObject>().MovieIvent;
+                    objParamsList.Add(movieIvent.ToString());
+                    break;
             }
 
             // objParamsOneLineの全ての要素を「,」で連結
