@@ -46,12 +46,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectNumber: 0
-  objectType: 3
+  objectType: 4
+  VersionDeff: 0
+  InvisibleNum: 0
   ConveyerSpeed: 0
   ConnectNum: 0
   Return: 0
   FanPower: 0
   WindDistance: 0
+  IsCollapse: 0
+  MovieIvent: 0
 --- !u!1001 &1145005134039475910
 PrefabInstance:
   m_ObjectHideFlags: 0
