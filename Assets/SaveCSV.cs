@@ -75,6 +75,9 @@ public class SaveCSV : MonoBehaviour
                 case StageObject.ENUM_ObjTypes.固定:
                     objParamsList.Add(objTrans.GetComponent<StageObject>().VersionDeff.ToString());
                     break;
+                case StageObject.ENUM_ObjTypes.壁:
+                    objParamsList.Add(objTrans.GetComponent<StageObject>().InvisibleNum.ToString());
+                    break;
                 case StageObject.ENUM_ObjTypes.敵:
                     break;
                 case StageObject.ENUM_ObjTypes.ベルトコンベア:

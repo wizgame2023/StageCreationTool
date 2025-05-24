@@ -16,6 +16,7 @@ public class ObjParamGUIEditor : Editor
         property.Add(nameof(StageObject.objectNumber), serializedObject.FindProperty(nameof(StageObject.objectNumber)));
         property.Add(nameof(StageObject.objectType), serializedObject.FindProperty(nameof(StageObject.objectType)));
         property.Add(nameof(StageObject.VersionDeff), serializedObject.FindProperty(nameof(StageObject.VersionDeff)));
+        property.Add(nameof(StageObject.InvisibleNum), serializedObject.FindProperty(nameof(StageObject.InvisibleNum)));
         property.Add(nameof(StageObject.ConveyerSpeed), serializedObject.FindProperty(nameof(StageObject.ConveyerSpeed)));
         property.Add(nameof(StageObject.ConnectNum), serializedObject.FindProperty(nameof(StageObject.ConnectNum)));
         property.Add(nameof(StageObject.Return), serializedObject.FindProperty(nameof(StageObject.Return)));
@@ -41,6 +42,11 @@ public class ObjParamGUIEditor : Editor
                 // 接続番号
                 property[nameof(StageObject.VersionDeff)].intValue =
                     EditorGUILayout.IntField("モデル違い", property[nameof(StageObject.VersionDeff)].intValue);
+                break;
+            case StageObject.ENUM_ObjTypes.壁:
+                // 接続番号
+                property[nameof(StageObject.InvisibleNum)].intValue =
+                    EditorGUILayout.IntField("透過番号", property[nameof(StageObject.InvisibleNum)].intValue);
                 break;
             case StageObject.ENUM_ObjTypes.敵:
                 break;
