@@ -111,8 +111,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectNumber: 0
-  objectType: 7
+  objectType: 8
   VersionDeff: 0
+  InvisibleNum: 0
   ConveyerSpeed: 0
   ConnectNum: 0
   Return: 0
