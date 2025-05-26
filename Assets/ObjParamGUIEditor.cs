@@ -88,6 +88,12 @@ public class ObjParamGUIEditor : Editor
                 property[nameof(StageObject.MovieIvent)].enumValueIndex =
                     EditorGUILayout.Popup("ムービーイベントの種類", property[nameof(StageObject.MovieIvent)].enumValueIndex, property[nameof(StageObject.MovieIvent)].enumNames);
                 break;
+            case StageObject.ENUM_ObjTypes.柱:
+                property[nameof(StageObject.VersionDeff)].intValue =
+                    EditorGUILayout.IntField("モデル違い", property[nameof(StageObject.VersionDeff)].intValue);
+                property[nameof(StageObject.InvisibleNum)].intValue =
+                    EditorGUILayout.IntField("透過番号", property[nameof(StageObject.InvisibleNum)].intValue);
+                break;
         }
 
         serializedObject.ApplyModifiedProperties();
