@@ -107,6 +107,9 @@ public class SaveCSV : MonoBehaviour
                     objParamsList.Add(objTrans.GetComponent<StageObject>().VersionDeff.ToString());
                     objParamsList.Add(objTrans.GetComponent<StageObject>().InvisibleNum.ToString());
                     break;
+                case StageObject.ENUM_ObjTypes.看板:
+                    objParamsList.Add(objTrans.GetComponent<StageObject>().SignboardData);
+                    break;
             }
 
             // objParamsOneLineの全ての要素を「,」で連結

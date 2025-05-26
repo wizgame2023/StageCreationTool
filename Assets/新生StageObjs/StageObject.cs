@@ -15,7 +15,8 @@ public class StageObject : MonoBehaviour
         露出配線,
         分割壁,
         ムービーイベント判定,
-        柱
+        柱,
+        看板
     }
 
     public enum ENUM_MovieIvent
@@ -62,7 +63,12 @@ public class StageObject : MonoBehaviour
     //-分割壁のパラメータ--------------------------------------
     public bool IsCollapse;
     //---------------------------------------------------------
+
     //-ムービーイベント判定のパラメータ------------------------
     public ENUM_MovieIvent MovieIvent;
+    //---------------------------------------------------------
+
+    //-ムービーイベント判定のパラメータ------------------------
+    public string SignboardData;
     //---------------------------------------------------------
 }
