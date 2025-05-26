@@ -103,6 +103,10 @@ public class SaveCSV : MonoBehaviour
                     int movieIvent = (int)objTrans.GetComponent<StageObject>().MovieIvent;
                     objParamsList.Add(movieIvent.ToString());
                     break;
+                case StageObject.ENUM_ObjTypes.柱:
+                    objParamsList.Add(objTrans.GetComponent<StageObject>().VersionDeff.ToString());
+                    objParamsList.Add(objTrans.GetComponent<StageObject>().InvisibleNum.ToString());
+                    break;
             }
 
             // objParamsOneLineの全ての要素を「,」で連結
