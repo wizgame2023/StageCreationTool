@@ -24,6 +24,7 @@ public class ObjParamGUIEditor : Editor
         property.Add(nameof(StageObject.WindDistance), serializedObject.FindProperty(nameof(StageObject.WindDistance)));
         property.Add(nameof(StageObject.IsCollapse), serializedObject.FindProperty(nameof(StageObject.IsCollapse)));
         property.Add(nameof(StageObject.MovieIvent), serializedObject.FindProperty(nameof(StageObject.MovieIvent)));
+        property.Add(nameof(StageObject.SignboardData), serializedObject.FindProperty(nameof(StageObject.SignboardData)));
     }
 
     public override void OnInspectorGUI()
@@ -93,6 +94,10 @@ public class ObjParamGUIEditor : Editor
                     EditorGUILayout.IntField("モデル違い", property[nameof(StageObject.VersionDeff)].intValue);
                 property[nameof(StageObject.InvisibleNum)].intValue =
                     EditorGUILayout.IntField("透過番号", property[nameof(StageObject.InvisibleNum)].intValue);
+                break;
+            case StageObject.ENUM_ObjTypes.看板:
+                property[nameof(StageObject.SignboardData)].stringValue =
+                    EditorGUILayout.TextField("看板に表示する画像", property[nameof(StageObject.SignboardData)].stringValue);
                 break;
         }
 
