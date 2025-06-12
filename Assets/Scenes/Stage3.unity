@@ -25070,6 +25070,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7387601705133255469, guid: 7f20b18cf7f8b364d849e67a94b053b9, type: 3}
+      propertyPath: MovieIvent
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 8786063972311737283, guid: 7f20b18cf7f8b364d849e67a94b053b9, type: 3}
       propertyPath: m_Name
       value: "\u30E0\u30FC\u30D3\u30FC\u30A4\u30D9\u30F3\u30C8\u5224\u5B9A"
