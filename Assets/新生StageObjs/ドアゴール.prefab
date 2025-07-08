@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4896890462143636549}
   - component: {fileID: 4464985575982181254}
   m_Layer: 0
-  m_Name: "\u30C9\u30A2\u4E0A"
+  m_Name: "\u30C9\u30A2\u30B4\u30FC\u30EB"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c997ba87ea7970a419ac70d096281684, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectNumber: 3
+  objectNumber: 4
   objectType: 4
   VersionDeff: 0
   InvisibleNum: 0
