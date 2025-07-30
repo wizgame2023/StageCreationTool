@@ -87,6 +87,7 @@ public class SaveCSV : MonoBehaviour
                 case StageObject.ENUM_ObjTypes.スイッチとドア:
                     objParamsList.Add(objTrans.GetComponent<StageObject>().ConnectNum.ToString());
                     objParamsList.Add(objTrans.GetComponent<StageObject>().Return.ToString());
+                    objParamsList.Add(objTrans.GetComponent<StageObject>().InvisibleNum.ToString());
                     break;
                 case StageObject.ENUM_ObjTypes.扇風機:
                     objParamsList.Add(objTrans.GetComponent<StageObject>().FanPower.ToString());
