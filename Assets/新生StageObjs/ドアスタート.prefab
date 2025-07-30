@@ -48,7 +48,7 @@ MonoBehaviour:
   objectNumber: 5
   objectType: 4
   VersionDeff: 0
-  InvisibleNum: 0
+  InvisibleNum: -1
   ConveyerSpeed: 0
   ConnectNum: 0
   Return: 0

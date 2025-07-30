@@ -66,6 +66,9 @@ public class ObjParamGUIEditor : Editor
                 // 軌道し続けるか
                 property[nameof(StageObject.Return)].boolValue =
                     EditorGUILayout.Toggle("起動し続けるか", property[nameof(StageObject.Return)].boolValue);
+                // 透過番号
+                property[nameof(StageObject.InvisibleNum)].intValue =
+                    EditorGUILayout.IntField("透過番号", property[nameof(StageObject.InvisibleNum)].intValue);
                 break;
             case StageObject.ENUM_ObjTypes.扇風機:
                 property[nameof(StageObject.FanPower)].floatValue =
