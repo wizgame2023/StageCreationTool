@@ -111,6 +111,10 @@ public class SaveCSV : MonoBehaviour
                 case StageObject.ENUM_ObjTypes.看板:
                     objParamsList.Add(objTrans.GetComponent<StageObject>().SignboardData);
                     break;
+                case StageObject.ENUM_ObjTypes.レーザー:
+                    objParamsList.Add(objTrans.GetComponent<StageObject>().MoveUpMax.ToString());
+                    objParamsList.Add(objTrans.GetComponent<StageObject>().MoveUpDownSpeed.ToString());
+                    break;
             }
 
             // objParamsOneLineの全ての要素を「,」で連結

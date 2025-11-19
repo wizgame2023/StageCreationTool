@@ -25,6 +25,8 @@ public class ObjParamGUIEditor : Editor
         property.Add(nameof(StageObject.IsCollapse), serializedObject.FindProperty(nameof(StageObject.IsCollapse)));
         property.Add(nameof(StageObject.MovieIvent), serializedObject.FindProperty(nameof(StageObject.MovieIvent)));
         property.Add(nameof(StageObject.SignboardData), serializedObject.FindProperty(nameof(StageObject.SignboardData)));
+        property.Add(nameof(StageObject.MoveUpMax), serializedObject.FindProperty(nameof(StageObject.MoveUpMax)));
+        property.Add(nameof(StageObject.MoveUpDownSpeed), serializedObject.FindProperty(nameof(StageObject.MoveUpDownSpeed)));
     }
 
     public override void OnInspectorGUI()
@@ -101,6 +103,12 @@ public class ObjParamGUIEditor : Editor
             case StageObject.ENUM_ObjTypes.看板:
                 property[nameof(StageObject.SignboardData)].stringValue =
                     EditorGUILayout.TextField("看板に表示する画像", property[nameof(StageObject.SignboardData)].stringValue);
+                break;
+            case StageObject.ENUM_ObjTypes.レーザー:
+                property[nameof(StageObject.MoveUpMax)].floatValue =
+                    EditorGUILayout.FloatField("移動の高さの最大値", property[nameof(StageObject.MoveUpMax)].floatValue);
+                property[nameof(StageObject.MoveUpDownSpeed)].floatValue =
+                    EditorGUILayout.FloatField("上下移動の速度", property[nameof(StageObject.MoveUpDownSpeed)].floatValue);
                 break;
         }
 

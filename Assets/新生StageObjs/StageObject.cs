@@ -16,7 +16,8 @@ public class StageObject : MonoBehaviour
         分割壁,
         ムービーイベント判定,
         柱,
-        看板
+        看板,
+        レーザー
     }
 
     public enum ENUM_MovieIvent
@@ -72,5 +73,10 @@ public class StageObject : MonoBehaviour
 
     //-ムービーイベント判定のパラメータ------------------------
     public string SignboardData;
+    //---------------------------------------------------------
+
+    //-レーザーのパラメータ------------------------------------
+    public float MoveUpMax;
+    public float MoveUpDownSpeed;
     //---------------------------------------------------------
 }

@@ -98,8 +98,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c997ba87ea7970a419ac70d096281684, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectNumber: 14
-  objectType: 0
+  objectNumber: 0
+  objectType: 11
   VersionDeff: 0
   InvisibleNum: 0
   ConveyerSpeed: 0
@@ -110,6 +110,8 @@ MonoBehaviour:
   IsCollapse: 0
   MovieIvent: 0
   SignboardData: 
+  MoveUpMax: 50
+  MoveUpDownSpeed: 30
 --- !u!65 &624445681904452573
 BoxCollider:
   m_ObjectHideFlags: 0
