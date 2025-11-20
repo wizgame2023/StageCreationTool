@@ -27,6 +27,7 @@ public class ObjParamGUIEditor : Editor
         property.Add(nameof(StageObject.SignboardData), serializedObject.FindProperty(nameof(StageObject.SignboardData)));
         property.Add(nameof(StageObject.MoveUpMax), serializedObject.FindProperty(nameof(StageObject.MoveUpMax)));
         property.Add(nameof(StageObject.MoveUpDownSpeed), serializedObject.FindProperty(nameof(StageObject.MoveUpDownSpeed)));
+        property.Add(nameof(StageObject.IsRotation), serializedObject.FindProperty(nameof(StageObject.IsRotation)));
     }
 
     public override void OnInspectorGUI()
@@ -109,6 +110,8 @@ public class ObjParamGUIEditor : Editor
                     EditorGUILayout.FloatField("移動の高さの最大値", property[nameof(StageObject.MoveUpMax)].floatValue);
                 property[nameof(StageObject.MoveUpDownSpeed)].floatValue =
                     EditorGUILayout.FloatField("上下移動の速度", property[nameof(StageObject.MoveUpDownSpeed)].floatValue);
+                property[nameof(StageObject.IsRotation)].boolValue =
+                    EditorGUILayout.Toggle("回転", property[nameof(StageObject.IsRotation)].boolValue);
                 break;
         }
 

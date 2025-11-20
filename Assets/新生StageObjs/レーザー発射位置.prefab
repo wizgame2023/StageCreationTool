@@ -112,6 +112,7 @@ MonoBehaviour:
   SignboardData: 
   MoveUpMax: 50
   MoveUpDownSpeed: 30
+  IsRotation: 0
 --- !u!65 &624445681904452573
 BoxCollider:
   m_ObjectHideFlags: 0

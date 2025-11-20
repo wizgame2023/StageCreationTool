@@ -114,6 +114,7 @@ public class SaveCSV : MonoBehaviour
                 case StageObject.ENUM_ObjTypes.レーザー:
                     objParamsList.Add(objTrans.GetComponent<StageObject>().MoveUpMax.ToString());
                     objParamsList.Add(objTrans.GetComponent<StageObject>().MoveUpDownSpeed.ToString());
+                    objParamsList.Add(objTrans.GetComponent<StageObject>().IsRotation.ToString());
                     break;
             }
 

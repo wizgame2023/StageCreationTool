@@ -78,5 +78,6 @@ public class StageObject : MonoBehaviour
     //-レーザーのパラメータ------------------------------------
     public float MoveUpMax;
     public float MoveUpDownSpeed;
+    public bool IsRotation;
     //---------------------------------------------------------
 }
